@@ -1,36 +1,38 @@
-package candicional;
+package aula2;
 
 import java.util.Scanner;
 
-public class Atividade2904 {
+public class tay2904 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 Scanner scanner = new Scanner(System.in);
-	        int totalAges = 0;
-	        int numberOfAges = 0;
-	        int age;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int somaIdades = 0;
+        int contadorIdades = 0;
+        
+        System.out.println("Digite as idades (digite 0 para finalizar):");
+        
+        while (true) {
+            int idade = scanner.nextInt();
+            
+            if (idade == 0) {
+                break; 
+            }
+            
+            somaIdades += idade;
+            contadorIdades++;
+        }
+        
+        if (contadorIdades == 0) {
+            System.out.println("Nenhuma idade foi digitada.");
+        } else {
+            double media = (double) somaIdades / contadorIdades;
+            System.out.println("A média das idades digitadas é: " + media);
+        }
+        
+        scanner.close();
+    }
+}
 
-	        System.out.println("Enter ages (enter 0 to quit):");
-	        age = scanner.nextInt();
-
-	        while (age != 0) {
-	            totalAges += age;
-	            numberOfAges++;
-	            age = scanner.nextInt();
-	        }
-
-	        if (numberOfAges > 0) {
-	            double averageAge = (double) totalAges / numberOfAges;
-	            System.out.printf("The average age is %.2f%n", averageAge);
-	        } else {
-	            System.out.println("No ages were entered.");
-	        }
-
-	        scanner.close();
-	    }
-	
-
-	}
 
 
